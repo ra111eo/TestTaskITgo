@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option go_package = "/pb";
+
+import "proto/transaction_message.proto";
+
+message Ewallet {
+    string id = 1;
+    string _rev =2;
+    double balance = 3;
+    repeated Transaction get = 4;
+    repeated Transaction send = 5;
+}

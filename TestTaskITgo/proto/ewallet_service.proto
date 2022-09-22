@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option go_package = "/pb";
+
+import "proto/ewallet_message.proto";
+import "proto/transaction_message.proto";
+
+message CreateEwalletRequest {
+    Ewallet ewallet = 1;
+} 
+
+message CreateEwalletResponse {
+    string id = 1;
+}
+
+message SendRequest {
+    Transaction transaction = 1;
+}
+
+message SendResponse{
+    double amount = 1;
+
+}
+message GetlastRequest{
+    bool key =1;
+}
+message GetlastResponse{
+    string  jsonData= 1;
+
+}
+service EwalletService{
+    rpc CreateEwallet(CreateEwalletRequest) returns (CreateEwalletResponse) {};
+    rpc Send(SendRequest) returns (SendResponse){};
+    rpc Getlast(GetlastRequest) returns (GetlastResponse){}
+}

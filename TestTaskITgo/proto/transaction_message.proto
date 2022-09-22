@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option go_package = "/pb";
+
+message Transaction {
+    string from = 1;
+    string to = 2;
+    double amount = 3;
+    string datetime = 4;
+}
+message TransactionField {
+    repeated Transaction tr = 1;
+}
